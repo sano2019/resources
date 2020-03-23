@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mb-5">GIT CHEATSHEET:</h1>
+      <h2>FOR EACH NEW FEATURE OR CHANGE:</h2>
+      <ul>
+        <li>Create a new branch</li>
+        <li>Make your changes in the code</li>
+      </ul>
+      <h2>PULL MASTER BRANCH TO FEATURE BRANCH:</h2>
+      <p><em>(Be sure to have clean status before this step)</em></p>
+      <ul>
+        <li><code>git checkout master</code></li>
+        <li><code>git pull origin master</code></li>
+        <li><code>git checkout branch-name</code></li>
+        <li><code>git merge master</code></li>
+        <li><code>git push origin branch-name</code></li>
+        <p><em>(**origin is the nickname of my GitHub)</em></p>
+      </ul>
+      <h2>CREATE PULL REQUEST:</h2>
+      <ul>
+        <li>In terminal: hub browse</li>
+        <li>Click on branches in your browser</li>
+        <li>Find your branch</li>
+        <li>Click create pull request</li>
+        <li>Assign to a reviewer</li>
+        <li>Create a meaningful message explaining what you did and how to test</li>
+      </ul>
+      <h2>REVIEW OF CODE:</h2>
+      <ul>
+        <li>The reviewer reviews the pull request</li>
+        <li>Read the meaningful message explaining how to test the code and what was added</li>
+      </ul>
+      <h2>TO TEST:</h2>
+      <ul>
+        <li><code>git fetch (downloads all branches)</code></li>
+        <li><code>git checkout pull-request-branch-name </code></li>
+        <li>The reviewer merges the code</li>
+      </ul>
+      <h2>AFTER MERGE IS DONE, YOU SHOULD:</h2>
+      <ul>
+        <p><em>(These steps are for the person who submitted the pull request)</em></p>
+        <li><code>git checkout master</code></li>
+        <li><code>git pull origin master</code></li>
+        <li><code>git sweep </code> <em>(cleans of the merged branches to ensure you don’t work on a finished branch, and to keep GitHub clean)</em> </li>
+        <li><code>git checkout -b new-branch-name  </code> <em>(you start working on the next feature)</em> </li>
+      </ul>
+      <h2>AFTER A MERGE IS DONE, YOUR TEAM SHOULD:</h2>
+      <ul>
+        <p><em> (These steps are for the team to update the branches they are working in to a new version of the master. This can be in current features they are working on too.)</em></p>
+        <li><code>git checkout master </code></li>
+        <li><code>git pull origin master </code></li>
+        <li><code>git checkout branch-name</code></li>
+        <li><code>git merge master (this merges the code FROM master into your branch-name)</code></li>
+        <li><code>git status</code></li>
+        <li><code>git push origin your-branch-name</code></li>
+      </ul>
+    </div>
+  </body>
+</html>
